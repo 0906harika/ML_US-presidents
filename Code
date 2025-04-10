@@ -1,0 +1,21 @@
+import numpy as np
+import pandas as pd
+data=pd.read_csv('/content/president_heights.csv')
+data.head()
+height=np.array(data["height(cm)"])
+print(height)
+print("Mean of heights=",height.mean())
+print("Standard Deviation of heights=",height.std())
+print("Minimum height=",height.min())
+print("Maximum of height=",height.max())
+print("25 percentile =",np.percentile(height,25))
+print("Median =",np.median(height))
+print("75 Percentile =",np.percentile(height,75))
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
+plt.hist(height)
+plt.title('Height Distributions of Presidents of USA')
+plt.xlabel("height (cm)")
+plt.ylabel("Number")
+plt.show()
